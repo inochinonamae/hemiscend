@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Hemiscend</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #111118;
+      --text-mid: #4a4a5a;
+      --text-soft: #9090a0;
+      --glass-bg: rgba(255, 255, 255, 0.62);
+      --glass-border: rgba(255, 255, 255, 0.88);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* blobs */
+    .blob-scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.28;
+      will-change: transform, border-radius;
+    }
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #c4b5fd, #a78bfa);
+      top: -120px; left: -100px;
+      animation: morph1 11s ease-in-out infinite, drift1 16s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #bae6fd, #7dd3fc);
+      bottom: 10%; right: -80px;
+      animation: morph2 13s ease-in-out infinite, drift2 18s ease-in-out infinite;
+    }
+    @keyframes morph1 {
+      0%,100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
+      50%      { border-radius: 38% 62% 70% 30% / 48% 60% 40% 52%; }
+    }
+    @keyframes morph2 {
+      0%,100% { border-radius: 44% 56% 60% 40% / 52% 68% 32% 48%; }
+      50%      { border-radius: 68% 32% 42% 58% / 38% 58% 42% 62%; }
+    }
+    @keyframes drift1 {
+      0%,100% { transform: translate(0, 0) scale(1); }
+      50%     { transform: translate(40px, 30px) scale(1.04); }
+    }
+    @keyframes drift2 {
+      0%,100% { transform: translate(0, 0) scale(1); }
+      50%     { transform: translate(-40px, -20px) scale(1.06); }
+    }
+
+    /* nav */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* content */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.95);
+      padding: 40px 40px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .card ul li {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+
+    .contact-link {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--text); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-soft); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .page h1 { font-size: 2rem; }
+      .card { padding: 28px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Hemiscend</a>
+    <a class="nav-back" href="index.html">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back
+    </a>
+  </nav>
+
+  <main class="page">
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="page-meta">Last updated: May 2025</p>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p>Hemiscend ("we", "us", or "our") builds apps that respect your privacy. This policy explains what data we collect, why, and how it is handled across all Hemiscend apps and services.</p>
+      <p>We collect only what is necessary to make our apps work. We do not sell your personal data.</p>
+    </div>
+
+    <div class="card">
+      <h2>What we collect</h2>
+      <p>Depending on which app you use, we may collect:</p>
+      <ul>
+        <li>Account information (email address, display name) if you create an account</li>
+        <li>App usage data to improve features and fix bugs</li>
+        <li>Health and wellness data you voluntarily enter into apps (stored locally on your device or in your iCloud account)</li>
+        <li>Device information (OS version, device model) for compatibility and crash reporting</li>
+      </ul>
+      <p>We do not collect sensitive health data without your explicit consent, and we never share it with third parties.</p>
+    </div>
+
+    <div class="card">
+      <h2>How we use your data</h2>
+      <ul>
+        <li>To provide and improve our apps and services</li>
+        <li>To diagnose crashes and fix bugs</li>
+        <li>To send product updates if you opt in</li>
+        <li>To comply with legal obligations</li>
+      </ul>
+      <p>We do not use your data for advertising or profiling.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data storage and security</h2>
+      <p>Personal data is stored securely using industry-standard encryption. Health and wellness data entered in our apps is stored locally on your device or synced via Apple iCloud — we do not have access to it on our servers.</p>
+      <p>We retain data only as long as necessary to provide our services or as required by law.</p>
+    </div>
+
+    <div class="card">
+      <h2>Third-party services</h2>
+      <p>Some of our apps use third-party services for analytics and crash reporting (such as Apple's built-in frameworks). These services have their own privacy policies. We do not integrate third-party advertising SDKs.</p>
+    </div>
+
+    <div class="card">
+      <h2>Your rights</h2>
+      <p>You have the right to access, correct, or delete your personal data at any time. To make a request, contact us at the email below. We will respond within 30 days.</p>
+      <p>If you are in the EEA or UK, you also have the right to lodge a complaint with your local data protection authority.</p>
+    </div>
+
+    <div class="card">
+      <h2>Children's privacy</h2>
+      <p>Our apps are not directed at children under 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such data, please contact us and we will delete it promptly.</p>
+    </div>
+
+    <div class="card">
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy as our apps evolve. When we do, we will update the date at the top of this page. Continued use of our apps after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Questions or requests about your privacy? Reach us at:<br>
+      <a class="contact-link" href="mailto:contact@hemiscend.com">contact@hemiscend.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-copy">© 2025 Hemiscend. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:contact@hemiscend.com">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
