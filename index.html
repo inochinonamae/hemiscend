@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hemiscend — Apps for minds that work differently</title>
-  <meta name="description" content="Hemiscend is an independent studio building AI-powered apps for focus, health, and clarity." />
+  <title>Hemiscend — Independent iOS App Studio</title>
+  <meta name="description" content="Hemiscend is an independent iOS app studio building thoughtful tools for the way your mind actually works." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -489,9 +489,24 @@
     }
     .footer-links a:hover { color: var(--text-mid); }
 
+    .apps-grid--two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-card--large .app-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .app-card--large .app-icon {
+      width: 72px; height: 72px;
+      font-size: 2rem;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .apps-grid { grid-template-columns: repeat(2, 1fr); }
+      .apps-grid--two { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
@@ -531,9 +546,9 @@
 
   <!-- HERO -->
   <header class="hero">
-    <span class="hero-eyebrow">Independent App Studio</span>
+    <span class="hero-eyebrow">Independent iOS Studio · Est. 2025</span>
     <h1>Apps built for minds that<br><em>work differently.</em></h1>
-    <p>Hemiscend is an independent studio crafting AI-powered tools for focus, health, and everyday clarity.</p>
+    <p>Hemiscend is an independent iOS studio making thoughtful tools for the way your brain actually sees, thinks, and organises.</p>
     <div class="hero-scroll">
       <div class="scroll-arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -549,73 +564,27 @@
       <p class="section-label">Our Apps</p>
       <h2 class="section-title">Everything we ship.</h2>
 
-      <div class="apps-grid">
+      <div class="apps-grid apps-grid--two">
 
-        <div class="app-card">
-          <div class="app-icon icon-purple">🌀</div>
+        <div class="app-card app-card--large">
+          <div class="app-icon icon-purple">👁</div>
           <div class="app-card-body">
-            <p class="app-name">Unspiral</p>
-            <p class="app-desc">Stop overthinking that email. Unspiral decodes tone and intent — built for brains prone to over-reading every message.</p>
-          </div>
-          <div class="app-tags">
-            <span class="tag tag-ios">iOS</span>
-            <span class="tag tag-web">Web</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-icon icon-blue">🎯</div>
-          <div class="app-card-body">
-            <p class="app-name">ADHD Focus</p>
-            <p class="app-desc">A focus companion designed around how ADHD brains actually work — not how productivity gurus think they should.</p>
+            <p class="app-name">Seelit</p>
+            <p class="app-desc">A mental imagery training app for people with aphantasia and hypophantasia. Your imagery isn't broken — it has a shape. Seelit helps you find it, then build from there through guided daily sessions.</p>
           </div>
           <div class="app-tags">
             <span class="tag tag-ios">iOS</span>
           </div>
         </div>
 
-        <div class="app-card">
-          <div class="app-icon icon-teal">🌱</div>
+        <div class="app-card app-card--large">
+          <div class="app-icon icon-orange">🗂</div>
           <div class="app-card-body">
-            <p class="app-name">BetterHuman</p>
-            <p class="app-desc">An AI-powered companion for digital detox and meaningful life habits — built for slow, steady progress.</p>
+            <p class="app-name">Patchee</p>
+            <p class="app-desc">A freeform canvas for iOS. Drag, drop, and arrange notes, countdowns, flashcards, and more into a personal space that works the way your brain does — not the way a spreadsheet does.</p>
           </div>
           <div class="app-tags">
             <span class="tag tag-ios">iOS</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-icon icon-rose">🌙</div>
-          <div class="app-card-body">
-            <p class="app-name">PMDDADHD</p>
-            <p class="app-desc">For the brains that change every two weeks. Track ADHD and PMDD together — cycle-aware, medication-aware, and actually useful.</p>
-          </div>
-          <div class="app-tags">
-            <span class="tag tag-ios">iOS</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-icon icon-orange">📐</div>
-          <div class="app-card-body">
-            <p class="app-name">JustBoard</p>
-            <p class="app-desc">A flexible widget canvas for iOS. Pin what matters — notes, links, photos — right to your home screen.</p>
-          </div>
-          <div class="app-tags">
-            <span class="tag tag-ios">iOS</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-icon icon-amber">☯</div>
-          <div class="app-card-body">
-            <p class="app-name">Eastern Bazi</p>
-            <p class="app-desc">Explore your life blueprint through Chinese astrology. Understand your nature, timing, and path through the BaZi framework.</p>
-          </div>
-          <div class="app-tags">
-            <span class="tag tag-ios">iOS</span>
-            <span class="tag tag-soon">Coming Soon</span>
           </div>
         </div>
 
@@ -630,26 +599,26 @@
         <div class="about-text">
           <p class="section-label">About</p>
           <h2 class="section-title" style="margin-bottom: 28px;">One founder.<br>Many apps.</h2>
-          <p>Hemiscend is an independent studio building software for people whose minds don't fit the standard mold — those with ADHD, PMDD, burnout, or simply a different relationship with focus and time.</p>
-          <p>Every app starts from a real problem. We use AI not as a gimmick, but as a tool that makes the experience genuinely better — smarter, more personal, and less frustrating.</p>
-          <p>Based in Taiwan. Building in public.</p>
+          <p>Hemiscend is an independent iOS studio building apps for people whose minds don't fit the standard mold — whether that's how they visualise, how they organise, or how they think.</p>
+          <p>Every app starts from a real problem. We care about craft: the details in the interaction, the honesty in the copy, and the respect for the person using it.</p>
+          <p>Based in Taiwan. Founded in 2025.</p>
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <p class="stat-number">6+</p>
-            <p class="stat-label">Apps in development</p>
-          </div>
-          <div class="stat-card">
-            <p class="stat-number">AI</p>
-            <p class="stat-label">Core technology</p>
+            <p class="stat-number">2</p>
+            <p class="stat-label">Apps shipping</p>
           </div>
           <div class="stat-card">
             <p class="stat-number">iOS</p>
             <p class="stat-label">Primary platform</p>
           </div>
           <div class="stat-card">
-            <p class="stat-number">2024</p>
+            <p class="stat-number">2025</p>
             <p class="stat-label">Founded</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-number">TW</p>
+            <p class="stat-label">Based in Taiwan</p>
           </div>
         </div>
       </div>
