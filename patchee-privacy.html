@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Patchee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #111118;
+      --text-mid: #4a4a5a;
+      --text-soft: #9090a0;
+      --brand: #111118;
+      --glass-bg: rgba(255, 255, 255, 0.62);
+      --glass-border: rgba(255, 255, 255, 0.88);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .blob-scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      will-change: transform, border-radius;
+    }
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #e0e0e0, #c0c0c0);
+      top: -120px; left: -100px;
+      animation: morph1 11s ease-in-out infinite, drift1 16s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #d0d0d0, #b0b0b0);
+      bottom: 10%; right: -80px;
+      animation: morph2 13s ease-in-out infinite, drift2 18s ease-in-out infinite;
+    }
+    @keyframes morph1 {
+      0%,100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
+      50%      { border-radius: 38% 62% 70% 30% / 48% 60% 40% 52%; }
+    }
+    @keyframes morph2 {
+      0%,100% { border-radius: 44% 56% 60% 40% / 52% 68% 32% 48%; }
+      50%      { border-radius: 68% 32% 42% 58% / 38% 58% 42% 62%; }
+    }
+    @keyframes drift1 {
+      0%,100% { transform: translate(0, 0) scale(1); }
+      50%     { transform: translate(40px, 30px) scale(1.04); }
+    }
+    @keyframes drift2 {
+      0%,100% { transform: translate(0, 0) scale(1); }
+      50%     { transform: translate(-40px, -20px) scale(1.06); }
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo .product {
+      color: var(--brand);
+      font-weight: 700;
+    }
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.95);
+      padding: 40px 40px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 18px 0 8px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .card ul li {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+
+    .contact-link {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--text); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-soft); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .page h1 { font-size: 2rem; }
+      .card { padding: 28px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Hemiscend <span class="product">/ Patchee</span></a>
+    <a class="nav-back" href="index.html">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back
+    </a>
+  </nav>
+
+  <main class="page">
+    <p class="page-label">Legal · Patchee</p>
+    <h1>Privacy Policy</h1>
+    <p class="page-meta">Last updated: 5 June 2026</p>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p>Patchee is operated by Hemiscend ("we", "us", "our"). Patchee is a personal canvas app that lets you organise tasks, notes, habits, routines, and more on a customisable board.</p>
+      <p>Patchee is built local-first. Your data lives on your device and, if you choose to enable it, in your private iCloud account. We do not operate a backend server and we cannot access your personal data.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data We Collect</h2>
+
+      <h3>Data Stored Locally on Your Device</h3>
+      <p>All canvas data — tasks, notes, routines, habits, mood entries, countdown timers, flashcards, and board layouts — is stored exclusively on your device using Apple's SwiftData framework. This data never leaves your device unless you enable iCloud Sync or use the manual backup feature.</p>
+
+      <h3>iCloud Sync (Optional)</h3>
+      <p>If you sign in to iCloud and enable sync, your data is synced to your private Apple iCloud account using Apple's CloudKit. We have no access to your iCloud data. Apple's privacy policy governs data stored in iCloud.</p>
+
+      <h3>Health Data (Optional)</h3>
+      <p>The Active Ring, Workout, Sleep, and Weight boxes can read data from Apple HealthKit with your permission. This data is read directly from HealthKit on your device and is never uploaded to our servers.</p>
+
+      <h3>Subscription Data</h3>
+      <p>When you purchase a subscription or Lifetime unlock, the transaction is processed by Apple. We use RevenueCat to verify your subscription status. RevenueCat receives only an anonymous identifier and your subscription state — not your name, email, or any personal data.</p>
+
+      <h3>Feedback (User-Initiated)</h3>
+      <p>If you choose to contact us via the Feedback section in Settings, your message is sent to hello@hemiscend.com through your device's default mail app. We only receive what you choose to include in that email.</p>
+
+      <h3>Crash Reports</h3>
+      <p>If the app crashes, Apple may collect anonymous crash data through standard App Store crash reporting. This data is anonymised and governed by Apple's privacy policy.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data We Do NOT Collect</h2>
+      <ul>
+        <li>We do not have an account system — no email, no password, no user profile</li>
+        <li>We do not collect analytics or track how you use the app</li>
+        <li>We do not collect advertising identifiers</li>
+        <li>We do not sell any data to third parties</li>
+        <li>We cannot read your iCloud data</li>
+        <li>We cannot read your HealthKit data</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Third Parties</h2>
+      <ul>
+        <li><strong>Apple</strong> — iCloud sync, HealthKit, App Store subscription processing, and crash reporting. Governed by Apple's privacy policy.</li>
+        <li><strong>RevenueCat</strong> — subscription status verification. Receives only an anonymous user ID and subscription state. No personal data is shared.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Your Data Rights</h2>
+      <p>Since all your data is stored on your device, you are in full control:</p>
+      <ul>
+        <li><strong>Delete</strong> — deleting the app removes all local data from your device</li>
+        <li><strong>Export</strong> — use Settings → Back Up Everything to export a full JSON copy of your data</li>
+        <li><strong>iCloud</strong> — manage or delete your iCloud data through your device's Settings app</li>
+      </ul>
+      <p>For any privacy questions, email <a class="contact-link" href="mailto:hello@hemiscend.com">hello@hemiscend.com</a>. We respond within 30 days.</p>
+    </div>
+
+    <div class="card">
+      <h2>Children's Privacy</h2>
+      <p>Patchee is not directed at children under 13. We do not knowingly collect data from children. If you believe a child has provided us with personal data, contact us and we will address it immediately.</p>
+    </div>
+
+    <div class="card">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy from time to time. Material changes will be communicated in-app before they take effect. The "last updated" date above always reflects the current version.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Privacy enquiries: <a class="contact-link" href="mailto:hello@hemiscend.com">hello@hemiscend.com</a></p>
+      <p>Hemiscend, incorporated in Canada.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2026 Hemiscend. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="patchee-terms.html">Terms</a>
+    </div>
+  </footer>
+
+</body>
+</html>
