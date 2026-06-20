@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support - 150 Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text: #f7f7f2;
+      --text-mid: #c9c9c0;
+      --text-soft: #898982;
+      --bg: #050505;
+      --panel: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.12);
+      --brand: #ffffff;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--bg); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(5,5,5,0.76);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo { font-size: 1.125rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text); text-decoration: none; }
+    .nav-logo .product { color: var(--brand); font-weight: 800; opacity: 0.72; }
+    .nav-back { font-size: 0.875rem; font-weight: 600; color: var(--text-mid); text-decoration: none; }
+    .nav-back:hover { color: var(--text); }
+    .page { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+    .page-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 14px; }
+    .page h1 { font-size: clamp(2.2rem, 7vw, 4.4rem); font-weight: 800; letter-spacing: -0.055em; line-height: 0.98; margin-bottom: 16px; }
+    .page-meta { font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 48px; max-width: 640px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px 38px;
+      margin-bottom: 18px;
+    }
+    .card h2 { font-size: 1.08rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .card h3 { font-size: 0.96rem; font-weight: 800; margin: 20px 0 7px; color: var(--text); }
+    .card p { font-size: 0.96rem; color: var(--text-mid); line-height: 1.76; margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+    .contact { font-size: 1.05rem; font-weight: 800; }
+    a { color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.34); text-decoration: none; font-weight: 800; }
+    a:hover { border-color: var(--text); }
+    footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copy { font-size: 0.8rem; color: var(--text-soft); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 0.8rem; color: var(--text-soft); border-bottom: none; font-weight: 600; }
+    .footer-links a:hover { color: var(--text-mid); }
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .card { padding: 28px 22px; border-radius: 14px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">Hemiscend <span class="product">/ 150 Club</span></a>
+    <a class="nav-back" href="index.html">Back</a>
+  </nav>
+
+  <main class="page">
+    <p class="page-label">Support - 150 Club</p>
+    <h1>How can we help?</h1>
+    <p class="page-meta">150 Club is an aging radar for the longevity era. We read every support message and usually reply within 1-2 business days.</p>
+
+    <section class="card">
+      <h2>Contact us</h2>
+      <p>For support, bug reports, privacy requests, subscription questions, or account deletion help, email us:</p>
+      <p class="contact"><a href="mailto:hello@hemiscend.com">hello@hemiscend.com</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Account deletion</h2>
+      <p>You can delete your 150 Club account inside the app:</p>
+      <p><strong>Open 150 Club - Profile - Settings - Delete account</strong></p>
+      <p>This deletes your 150 Club cloud account and associated cloud account data. If your device is offline or the server cannot be reached, 150 Club shows an error and does not claim deletion succeeded.</p>
+      <p>You can also contact <a href="mailto:hello@hemiscend.com">hello@hemiscend.com</a> for account deletion help.</p>
+    </section>
+
+    <section class="card">
+      <h2>Frequently asked questions</h2>
+
+      <h3>What is 150 Club?</h3>
+      <p>150 Club is a private health and aging radar. It helps you track biological age estimates, aging rate, Apple Health trends, home health readings, lab report markers, and family health signals in one place.</p>
+
+      <h3>Is 150 Club medical advice?</h3>
+      <p>No. 150 Club is not a medical device, diagnosis tool, or replacement for a doctor. The app is designed for personal wellness tracking and early signal awareness. Always speak with a qualified healthcare professional for medical questions, diagnosis, or treatment.</p>
+
+      <h3>Why does 150 Club ask for Apple Health access?</h3>
+      <p>Apple Health access lets 150 Club read health categories you approve, such as activity, sleep, heart, body, respiratory, or related wellness metrics. You control these permissions in iOS Settings and Apple Health.</p>
+
+      <h3>Why does 150 Club ask for camera access?</h3>
+      <p>Camera access is used when you choose to scan a home device reading, such as a blood pressure monitor, glucose meter, scale, or pulse oximeter screen. You should always confirm the extracted values before saving them.</p>
+
+      <h3>Where can I read the privacy policy?</h3>
+      <p>Read the 150 Club Privacy Policy here: <a href="150club-privacy.html">150club-privacy.html</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>About</h2>
+      <p>150 Club is made by Hemiscend, incorporated in Canada.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2026 Hemiscend. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="150club-privacy.html">Privacy</a>
+    </div>
+  </footer>
+</body>
+</html>
