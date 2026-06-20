@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Growout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text: #111118;
+      --text-mid: #4a4a5a;
+      --text-soft: #9090a0;
+      --brand: #24d34f;
+      --glass-bg: rgba(255, 255, 255, 0.62);
+      --glass-border: rgba(255, 255, 255, 0.88);
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+    .blob-scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+    }
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #82f29a, #24d34f);
+      top: -120px; left: -100px;
+    }
+    .blob-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #c29b66, #6b4420);
+      bottom: 10%; right: -80px;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo .product { color: var(--brand); font-weight: 800; }
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+    }
+    .nav-back:hover { color: var(--text); }
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+    .page h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      margin-bottom: 56px;
+    }
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.95);
+      padding: 40px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin: 18px 0 8px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .card li {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+    a { color: var(--text); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.18); }
+    a:hover { border-color: var(--text); }
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-soft); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-weight: 500;
+      border-bottom: none;
+    }
+    .footer-links a:hover { color: var(--text-mid); }
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .page h1 { font-size: 2rem; }
+      .card { padding: 28px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="blob-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Hemiscend <span class="product">/ Growout</span></a>
+    <a class="nav-back" href="index.html">Back</a>
+  </nav>
+
+  <main class="page">
+    <p class="page-label">Privacy Policy - Growout</p>
+    <h1>Privacy Policy</h1>
+    <p class="page-meta">Last updated: June 20, 2026</p>
+
+    <section class="card">
+      <h2>Overview</h2>
+      <p>Growout is a small outdoor habit app. It helps you record days when you go outside, grow a virtual plant, collect sprouts, unlock plant skins, and optionally share weekly cards.</p>
+      <p>This policy explains what information Growout handles, why it is used, and how you can delete your account and data.</p>
+    </section>
+
+    <section class="card">
+      <h2>Information we collect or process</h2>
+      <h3>Account and app identifiers</h3>
+      <p>Growout may create an anonymous app account identifier, and may let you link your account with Apple Sign In. This is used to restore your logs, sprouts, skins, and basic app state across reinstall or a new device.</p>
+
+      <h3>Outdoor logs</h3>
+      <p>When you log a day, Growout may store the date, caption, selected tone or scene, plant state, streak data, sprouts, skins, and related app progress.</p>
+
+      <h3>Photos</h3>
+      <p>If you choose or take a photo for an outdoor log, Growout processes that photo so it can appear in your log. If cloud backup is available and enabled for your account state, uploaded log photos may be stored with your account.</p>
+
+      <h3>Location</h3>
+      <p>Growout may request location access when you log a day, to help confirm that you went outside. Growout does not track your location in the background. Location is not used for advertising or tracking.</p>
+
+      <h3>Notifications</h3>
+      <p>If you allow notifications, Growout uses them for daily reminders and plant care reminders. You can turn notifications off in iOS Settings at any time.</p>
+    </section>
+
+    <section class="card">
+      <h2>How we use information</h2>
+      <ul>
+        <li>To operate core app features, including logs, plant growth, streaks, sprouts, skins, and share cards.</li>
+        <li>To restore your account data if you reinstall the app or move to a new device.</li>
+        <li>To provide reminders when you opt in to notifications.</li>
+        <li>To maintain app reliability, security, and abuse prevention.</li>
+      </ul>
+      <p>Growout does not sell your personal information. Growout does not use your information for third-party advertising or cross-app tracking.</p>
+    </section>
+
+    <section class="card">
+      <h2>Third-party services</h2>
+      <p>Growout uses Supabase for backend services such as authentication, database storage, and file storage. Supabase processes data only as needed to provide those backend services for Growout.</p>
+      <p>Apple services may be used for Apple Sign In, iOS notifications, App Store distribution, and related platform functionality.</p>
+    </section>
+
+    <section class="card">
+      <h2>Sharing</h2>
+      <p>Growout includes share features, such as weekly share cards. Sharing is initiated by you through the iOS share sheet or similar system sharing features. The people or services you share with are controlled by your device and the destination app you choose.</p>
+    </section>
+
+    <section class="card">
+      <h2>Data retention and deletion</h2>
+      <p>Growout keeps account data only as long as needed to operate the app or until you delete your account.</p>
+      <p>You can delete your account inside the app: <strong>Settings - Delete account</strong>. This deletes your Growout cloud account and associated cloud account data. If your device is offline or the server cannot be reached, Growout shows an error and does not claim deletion succeeded.</p>
+      <p>You can also contact us at <a href="mailto:hello@hemiscend.com">hello@hemiscend.com</a> for account deletion or privacy requests.</p>
+    </section>
+
+    <section class="card">
+      <h2>Children</h2>
+      <p>Growout is not directed to children under 13. If you believe a child has provided personal information through Growout, please contact us so we can review and delete it where appropriate.</p>
+    </section>
+
+    <section class="card">
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy when Growout changes or when legal, platform, or operational requirements change. The updated policy will be posted on this page with a new "Last updated" date.</p>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>Growout is made by Hemiscend. For privacy questions, support, or account deletion requests, contact:</p>
+      <p><a href="mailto:hello@hemiscend.com">hello@hemiscend.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2026 Hemiscend. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="growout-support.html">Support</a>
+    </div>
+  </footer>
+</body>
+</html>
