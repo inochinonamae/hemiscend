@@ -329,6 +329,27 @@
       flex-wrap: wrap;
     }
 
+    .app-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: -4px;
+    }
+
+    .app-links a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.16);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .app-links a:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
     .tag {
       font-size: 0.7rem;
       font-weight: 600;
@@ -350,6 +371,7 @@
     .icon-rose    { background: linear-gradient(135deg, #be123c, #fb7185); }
     .icon-orange  { background: linear-gradient(135deg, #c2410c, #fb923c); }
     .icon-amber   { background: linear-gradient(135deg, #b45309, #fcd34d); }
+    .icon-green   { background: linear-gradient(135deg, #0e0e0e, #24d34f); }
 
     /* ─── ABOUT ─── */
     #about {
@@ -490,7 +512,7 @@
     .footer-links a:hover { color: var(--text-mid); }
 
     .apps-grid--two {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .app-card--large .app-desc {
@@ -588,6 +610,21 @@
           </div>
         </div>
 
+        <div class="app-card app-card--large">
+          <div class="app-icon icon-green">🌱</div>
+          <div class="app-card-body">
+            <p class="app-name">Growout</p>
+            <p class="app-desc">A tiny outdoor habit app for indoor people. Log the days you go outside, grow a plant, collect sprouts, and share weekly progress cards.</p>
+          </div>
+          <div class="app-tags">
+            <span class="tag tag-ios">iOS</span>
+          </div>
+          <div class="app-links">
+            <a href="growout-privacy.html">Privacy</a>
+            <a href="growout-support.html">Support</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -605,7 +642,7 @@
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <p class="stat-number">2</p>
+            <p class="stat-number">3</p>
             <p class="stat-label">Apps shipping</p>
           </div>
           <div class="stat-card">
